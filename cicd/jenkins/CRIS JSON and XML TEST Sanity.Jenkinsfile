@@ -83,7 +83,7 @@ pipeline {
         JUNIT_XML_RESULTS_PATH = 'generatedJUnitFiles/*/*/*.xml' 
        
         //For destination images 
-        DOCKER_REPO = 'RMQ_MIDHUN' //MAL-NAME/Name from Jenkins
+        DOCKER_REPO = 'RXMICROTEST_MIDHUN' //MAL-NAME/Name from Jenkins
         IMAGE_NAME = "${env.PROJECT_NAME}" 
         IMAGE_TAG = "${env.PULL_REQUEST}" 
         KUBE_DOCKER_SECRET_NAME = "${env.PROJECT_NAME}-${env.PULL_REQUEST}" 
