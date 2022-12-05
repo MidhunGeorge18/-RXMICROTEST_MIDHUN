@@ -1,0 +1,35 @@
+{
+"Qualitygate1-Unit" :{
+"PassPercentage": 90.00
+},
+"QualityGate2-Regression" :{
+"PassPercentage": 50.00
+},
+"QualityGate2-Functional" :{
+"PassPercentage": 40.00
+},
+"QualityGate2-Sanity":{
+"PassPercentage": 70.00
+},
+"QualityGate3-InterSystem":{
+"PassPercentage": 70.00
+},
+"QualityGate4-Sanity":{
+"PassPercentage": 70.00
+},
+"QualityGate4-Solution":{
+"PassPercentage": 70.00
+},
+"QualityGate4-LnP":{
+"PassPercentage": 100.00
+},
+"QualityGate5-Sanity":{
+"PassPercentage": 70.00
+},
+"QualityGate5-UAT":{
+"PassPercentage": 80.00
+},
+"QualityGate7-ProductionSanity":{
+"PassPercentage": 80.00
+}
+}
