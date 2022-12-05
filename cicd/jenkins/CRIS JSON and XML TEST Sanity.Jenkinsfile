@@ -75,7 +75,7 @@ pipeline {
         PULL_REQUEST = "pr-${env.CHANGE_ID}" 
 
         // Custom project variables 
-        PROJECT_NAME = 'RXMICRO-QA/RXMICROTEST_MIDHUN' //Should be Repo-name 
+        PROJECT_NAME = 'RXMICRO-QA/RMQ_MIDHUN' //Should be Repo-name 
         PROJECT_MAL = 'RXMICRO' 
         XUNIT_XML_RESULTS_PATH = '.' 
         XUNIT_XML_FILE_PREFIX = 'generatedJUnitFiles/*/*/*.xml' 
@@ -83,7 +83,7 @@ pipeline {
         JUNIT_XML_RESULTS_PATH = 'generatedJUnitFiles/*/*/*.xml' 
        
         //For destination images 
-        DOCKER_REPO = 'RXMICROTEST_MIDHUN' //MAL-NAME/Name from Jenkins
+        DOCKER_REPO = 'RMQ_MIDHUN' //MAL-NAME/Name from Jenkins
         IMAGE_NAME = "${env.PROJECT_NAME}" 
         IMAGE_TAG = "${env.PULL_REQUEST}" 
         KUBE_DOCKER_SECRET_NAME = "${env.PROJECT_NAME}-${env.PULL_REQUEST}" 
