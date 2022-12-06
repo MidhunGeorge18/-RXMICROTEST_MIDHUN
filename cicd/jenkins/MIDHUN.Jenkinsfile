@@ -75,7 +75,7 @@ pipeline {
         PULL_REQUEST = "pr-${env.CHANGE_ID}" 
 
         // Custom project variables 
-        PROJECT_NAME = 'RXMICRO-QA/BHAVYA' //Should be Repo-name 
+        PROJECT_NAME = 'RXMICRO-QA/MIDHUN' //Should be Repo-name 
         PROJECT_MAL = 'RXMICRO' 
         XUNIT_XML_RESULTS_PATH = '.' 
         XUNIT_XML_FILE_PREFIX = 'generatedJUnitFiles/*/*/*.xml' 
@@ -83,7 +83,7 @@ pipeline {
         JUNIT_XML_RESULTS_PATH = 'generatedJUnitFiles/*/*/*.xml' 
        
         //For destination images 
-        DOCKER_REPO = 'BHAVYA' //MAL-NAME/Name from Jenkins
+        DOCKER_REPO = 'MIDHUN' //MAL-NAME/Name from Jenkins
         IMAGE_NAME = "${env.PROJECT_NAME}" 
         IMAGE_TAG = "${env.PULL_REQUEST}" 
         KUBE_DOCKER_SECRET_NAME = "${env.PROJECT_NAME}-${env.PULL_REQUEST}" 
@@ -101,7 +101,7 @@ pipeline {
         string(defaultValue: 'ARCADE', description: '', name: 'TestTool', trim: false) 
         choice(choices: ['Sanity','Regression'], description: '', name: 'TestType') 
         string(defaultValue: 'BMCC', description: '', name: 'Project', trim: false) 
-        string(defaultValue: 'BMCC-97981', description: '', name: 'TestPlan', trim: false) 
+        string(defaultValue: 'BMCC-98210', description: '', name: 'TestPlan', trim: false) 
         string(defaultValue: 'Test1', description: '', name: 'XrayEnvironment', trim: false)  
 
     }
@@ -167,7 +167,7 @@ pipeline {
                             #Below is an example of running a Rest API test 
                             \"/soatest/parasoft/soatest_virtualize/9.10/soatestcli\" -data \"${WORKSPACE}" -import \"${WORKSPACE}\" 
                               
-                            \"/soatest/parasoft/soatest_virtualize/9.10/soatestcli\" -data \"${WORKSPACE}\" -resource \"RXMICRO_PRODINFO/BHAVYA.tst\" -environment %Environment% -config \"soatest.user://Example Configuration\" -report \"${OLD_PWD}/ARCADE_REPORT.xml\" -localsettings \"${WORKSPACE}/lib/Testsettings.properties\" -appconsole \"stdout\" 
+                            \"/soatest/parasoft/soatest_virtualize/9.10/soatestcli\" -data \"${WORKSPACE}\" -resource \"RXMICRO_PRODINFO/MIDHUN.tst\" -environment %Environment% -config \"soatest.user://Example Configuration\" -report \"${OLD_PWD}/ARCADE_REPORT.xml\" -localsettings \"${WORKSPACE}/lib/Testsettings.properties\" -appconsole \"stdout\" 
                             cd $OLD_PWD     
                        
                           
@@ -203,7 +203,7 @@ pipeline {
                     steps { 
                         script { 
                             unstash 'RESULTS2' 
-                            jslEmailNotification('bhavyashree.bt@lumen.com', 'Job Name:${JOB_NAME} BuildNo:${BUILD_NUMBER} Status:${BUILD_STATUS}', '**/ARCADE_REPORT.html', '''ARCADE Test Results Attached: <br>Build Url : ${BUILD_URL}''') 
+                            jslEmailNotification('Midhun.George@lumen.com', 'Job Name:${JOB_NAME} BuildNo:${BUILD_NUMBER} Status:${BUILD_STATUS}', '**/ARCADE_REPORT.html', '''ARCADE Test Results Attached: <br>Build Url : ${BUILD_URL}''') 
                         } 
                     } 
                 } 
@@ -212,7 +212,7 @@ pipeline {
                 stage('Posting Results to Teams Notification') {
                     steps {
                         echo 'Posting to Teams Channel'
-                    office365ConnectorSend message: 'Ensemble Sanity has been Done and reported to :(https://ctl.atlassian.net/browse/BMCC-97981) }', webhookUrl: 'https://centurylink.webhook.office.com/webhookb2/eb78ed92-ce5d-4490-9bf1-f556cd927440@72b17115-9915-42c0-9f1b-4f98e5a4bcd2/JenkinsCI/8065c98a47ae41afb7b7534997788110/6732ab06-c733-4e15-b843-91a5760cbf4d'
+                    office365ConnectorSend message: 'Ensemble Sanity has been Done and reported to :(https://ctl.atlassian.net/browse/MIDHUN) }', webhookUrl: 'https://centurylink.webhook.office.com/webhookb2/eb78ed92-ce5d-4490-9bf1-f556cd927440@72b17115-9915-42c0-9f1b-4f98e5a4bcd2/JenkinsCI/8065c98a47ae41afb7b7534997788110/6732ab06-c733-4e15-b843-91a5760cbf4d'
                                }
                             }
 
