@@ -83,7 +83,7 @@ pipeline {
         JUNIT_XML_RESULTS_PATH = 'generatedJUnitFiles/*/*/*.xml' 
        
         //For destination images 
-        DOCKER_REPO = 'RMQ_MIDHUN' //MAL-NAME/Name from Jenkins
+        DOCKER_REPO = 'RXMICROTEST_MIDHUN' //MAL-NAME/Name from Jenkins
         IMAGE_NAME = "${env.PROJECT_NAME}" 
         IMAGE_TAG = "${env.PULL_REQUEST}" 
         KUBE_DOCKER_SECRET_NAME = "${env.PROJECT_NAME}-${env.PULL_REQUEST}" 
@@ -203,7 +203,7 @@ pipeline {
                     steps { 
                         script { 
                             unstash 'RESULTS2' 
-                            jslEmailNotification('Midhun.George@lumen.com','john.c2.campbell@lumen.com', 'Job Name:${JOB_NAME} BuildNo:${BUILD_NUMBER} Status:${BUILD_STATUS}', '**/ARCADE_REPORT.html', '''ARCADE Test Results Attached: <br>Build Url : ${BUILD_URL}''') 
+                            jslEmailNotification('Midhun.George@lumen.com', 'Job Name:${JOB_NAME} BuildNo:${BUILD_NUMBER} Status:${BUILD_STATUS}', '**/ARCADE_REPORT.html', '''ARCADE Test Results Attached: <br>Build Url : ${BUILD_URL}''') 
                         } 
                     } 
                 } 
