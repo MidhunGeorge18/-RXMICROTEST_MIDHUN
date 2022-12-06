@@ -75,7 +75,7 @@ pipeline {
         PULL_REQUEST = "pr-${env.CHANGE_ID}" 
 
         // Custom project variables 
-        PROJECT_NAME = 'RXMICROTEST_MIDHUN' //Should be Repo-name 
+        PROJECT_NAME = 'RXMICRO-QA/RXMICROTEST_MIDHUN' //Should be Repo-name 
         PROJECT_MAL = 'RXMICRO' 
         XUNIT_XML_RESULTS_PATH = '.' 
         XUNIT_XML_FILE_PREFIX = 'generatedJUnitFiles/*/*/*.xml' 
