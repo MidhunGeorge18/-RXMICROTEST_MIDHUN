@@ -167,7 +167,7 @@ pipeline {
                             #Below is an example of running a Rest API test 
                             \"/soatest/parasoft/soatest_virtualize/9.10/soatestcli\" -data \"${WORKSPACE}" -import \"${WORKSPACE}\" 
                               
-                            \"/soatest/parasoft/soatest_virtualize/9.10/soatestcli\" -data \"${WORKSPACE}\" -resource \"TestAssets/sanity--lq/CRIS JSON and XML TEST Sanity.tst\" -environment %Environment% -config \"soatest.user://Example Configuration\" -report \"${OLD_PWD}/ARCADE_REPORT.xml\" -localsettings \"${WORKSPACE}/lib/Testsettings.properties\" -appconsole \"stdout\" 
+                            \"/soatest/parasoft/soatest_virtualize/9.10/soatestcli\" -data \"${WORKSPACE}\" -resource \"TestAssets/CRIS JSON and XML TEST Sanity.tst\" -environment %Environment% -config \"soatest.user://Example Configuration\" -report \"${OLD_PWD}/ARCADE_REPORT.xml\" -localsettings \"${WORKSPACE}/lib/Testsettings.properties\" -appconsole \"stdout\" 
                             cd $OLD_PWD     
                        
                           
